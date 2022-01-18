@@ -1,0 +1,16 @@
+E:\Teaching\ShopCore\ShopCore.Test\bin\Debug\net5.0\ShopCore.Test.exe
+E:\Teaching\ShopCore\ShopCore.Test\bin\Debug\net5.0\ShopCore.Test.deps.json
+E:\Teaching\ShopCore\ShopCore.Test\bin\Debug\net5.0\ShopCore.Test.runtimeconfig.json
+E:\Teaching\ShopCore\ShopCore.Test\bin\Debug\net5.0\ShopCore.Test.runtimeconfig.dev.json
+E:\Teaching\ShopCore\ShopCore.Test\bin\Debug\net5.0\ShopCore.Test.dll
+E:\Teaching\ShopCore\ShopCore.Test\bin\Debug\net5.0\ref\ShopCore.Test.dll
+E:\Teaching\ShopCore\ShopCore.Test\bin\Debug\net5.0\ShopCore.Test.pdb
+E:\Teaching\ShopCore\ShopCore.Test\obj\Debug\net5.0\ShopCore.Test.csproj.AssemblyReference.cache
+E:\Teaching\ShopCore\ShopCore.Test\obj\Debug\net5.0\ShopCore.Test.GeneratedMSBuildEditorConfig.editorconfig
+E:\Teaching\ShopCore\ShopCore.Test\obj\Debug\net5.0\ShopCore.Test.AssemblyInfoInputs.cache
+E:\Teaching\ShopCore\ShopCore.Test\obj\Debug\net5.0\ShopCore.Test.AssemblyInfo.cs
+E:\Teaching\ShopCore\ShopCore.Test\obj\Debug\net5.0\ShopCore.Test.csproj.CoreCompileInputs.cache
+E:\Teaching\ShopCore\ShopCore.Test\obj\Debug\net5.0\ShopCore.Test.dll
+E:\Teaching\ShopCore\ShopCore.Test\obj\Debug\net5.0\ref\ShopCore.Test.dll
+E:\Teaching\ShopCore\ShopCore.Test\obj\Debug\net5.0\ShopCore.Test.pdb
+E:\Teaching\ShopCore\ShopCore.Test\obj\Debug\net5.0\ShopCore.Test.genruntimeconfig.cache

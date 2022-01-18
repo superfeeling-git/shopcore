@@ -1,0 +1,17 @@
+E:\Teaching\ShopCore\ShopCore.Repository\bin\Debug\net5.0\ShopCore.Repository.deps.json
+E:\Teaching\ShopCore\ShopCore.Repository\bin\Debug\net5.0\ShopCore.Repository.dll
+E:\Teaching\ShopCore\ShopCore.Repository\bin\Debug\net5.0\ref\ShopCore.Repository.dll
+E:\Teaching\ShopCore\ShopCore.Repository\bin\Debug\net5.0\ShopCore.Repository.pdb
+E:\Teaching\ShopCore\ShopCore.Repository\bin\Debug\net5.0\ShopCore.Entity.dll
+E:\Teaching\ShopCore\ShopCore.Repository\bin\Debug\net5.0\ShopCore.Entity.pdb
+E:\Teaching\ShopCore\ShopCore.Repository\obj\Debug\net5.0\ShopCore.Repository.csproj.AssemblyReference.cache
+E:\Teaching\ShopCore\ShopCore.Repository\obj\Debug\net5.0\ShopCore.Repository.GeneratedMSBuildEditorConfig.editorconfig
+E:\Teaching\ShopCore\ShopCore.Repository\obj\Debug\net5.0\ShopCore.Repository.AssemblyInfoInputs.cache
+E:\Teaching\ShopCore\ShopCore.Repository\obj\Debug\net5.0\ShopCore.Repository.AssemblyInfo.cs
+E:\Teaching\ShopCore\ShopCore.Repository\obj\Debug\net5.0\ShopCore.Repository.csproj.CoreCompileInputs.cache
+E:\Teaching\ShopCore\ShopCore.Repository\obj\Debug\net5.0\ShopCore.Repository.csproj.CopyComplete
+E:\Teaching\ShopCore\ShopCore.Repository\obj\Debug\net5.0\ShopCore.Repository.dll
+E:\Teaching\ShopCore\ShopCore.Repository\obj\Debug\net5.0\ref\ShopCore.Repository.dll
+E:\Teaching\ShopCore\ShopCore.Repository\obj\Debug\net5.0\ShopCore.Repository.pdb
+E:\Teaching\ShopCore\ShopCore.Repository\bin\Debug\net5.0\ShopCore.Dto.dll
+E:\Teaching\ShopCore\ShopCore.Repository\bin\Debug\net5.0\ShopCore.Dto.pdb

@@ -1,0 +1,12 @@
+E:\Teaching\ShopCore\Shop.Utility\bin\Debug\net5.0\Shop.Utility.deps.json
+E:\Teaching\ShopCore\Shop.Utility\bin\Debug\net5.0\Shop.Utility.dll
+E:\Teaching\ShopCore\Shop.Utility\bin\Debug\net5.0\ref\Shop.Utility.dll
+E:\Teaching\ShopCore\Shop.Utility\bin\Debug\net5.0\Shop.Utility.pdb
+E:\Teaching\ShopCore\Shop.Utility\obj\Debug\net5.0\Shop.Utility.csproj.AssemblyReference.cache
+E:\Teaching\ShopCore\Shop.Utility\obj\Debug\net5.0\Shop.Utility.GeneratedMSBuildEditorConfig.editorconfig
+E:\Teaching\ShopCore\Shop.Utility\obj\Debug\net5.0\Shop.Utility.AssemblyInfoInputs.cache
+E:\Teaching\ShopCore\Shop.Utility\obj\Debug\net5.0\Shop.Utility.AssemblyInfo.cs
+E:\Teaching\ShopCore\Shop.Utility\obj\Debug\net5.0\Shop.Utility.csproj.CoreCompileInputs.cache
+E:\Teaching\ShopCore\Shop.Utility\obj\Debug\net5.0\Shop.Utility.dll
+E:\Teaching\ShopCore\Shop.Utility\obj\Debug\net5.0\ref\Shop.Utility.dll
+E:\Teaching\ShopCore\Shop.Utility\obj\Debug\net5.0\Shop.Utility.pdb
