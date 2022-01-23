@@ -19,6 +19,7 @@ namespace ShopCore.Entity
         /// 集合导航属性
         /// </summary>
         public List<ShipAddress> shipAddresses { get; set; }
+        public List<Order> Order { get; set; }
     }
 
     //    User.XXX = 999;

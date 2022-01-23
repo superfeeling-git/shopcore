@@ -1,15 +1,19 @@
-﻿using ShopCore.Dto;
+﻿using NLog;
+using ShopCore.Dto;
 using ShopCore.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Z.EntityFramework.Extensions;
 
 namespace ShopCore.Repository
 {
     public class CartRepository : ICartRepository
     {
+        private readonly Logger _logger = LogManager.GetCurrentClassLogger();
+
         private ShopCoreContext db;
         public CartRepository(ShopCoreContext _db)
         {
@@ -38,7 +42,8 @@ namespace ShopCore.Repository
                     GoodsImg = m.a.a.GoodsImg,
                     GoodsName = m.a.a.GoodsName,
                     Price = m.a.a.Price,
-                    SKUID = m.b.SKUID
+                    SKUID = m.b.SKUID,
+                    CartId = m.b.CartId
                 }).ToList();
         }
 
@@ -56,9 +61,31 @@ namespace ShopCore.Repository
         /// <summary>
         /// 删除购物车商品
         /// </summary>
-        public void Delete()
+        public int Delete(int CartId)
         {
+            try
+            {
+                var cart = db.Cart.Find(CartId);
+                _logger.Info($"删除购物车商品:用户ID：{cart.UserId}，商品ID：{cart.SKUID}");
 
+                db.Cart.Remove(cart);                
+                return db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                _logger.Error(e, e.Message);
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// 根据当前用户删除所有的商品
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public int Clear(int UserId)
+        {
+            return db.Cart.Where(m => m.UserId == UserId).DeleteFromQuery();
         }
     }
 }

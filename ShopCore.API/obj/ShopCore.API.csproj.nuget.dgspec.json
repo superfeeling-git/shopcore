@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Teaching\\ShopCore\\shopcore.api\\ShopCore.API.csproj": {}
+    "E:\\Teaching\\ShopCore\\ShopCore.API\\ShopCore.API.csproj": {}
   },
   "projects": {
     "E:\\Teaching\\ShopCore\\Shop.Utility\\ShopCore.Utility.csproj": {
@@ -65,14 +65,14 @@
         }
       }
     },
-    "E:\\Teaching\\ShopCore\\shopcore.api\\ShopCore.API.csproj": {
+    "E:\\Teaching\\ShopCore\\ShopCore.API\\ShopCore.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Teaching\\ShopCore\\shopcore.api\\ShopCore.API.csproj",
+        "projectUniqueName": "E:\\Teaching\\ShopCore\\ShopCore.API\\ShopCore.API.csproj",
         "projectName": "ShopCore.API",
-        "projectPath": "E:\\Teaching\\ShopCore\\shopcore.api\\ShopCore.API.csproj",
+        "projectPath": "E:\\Teaching\\ShopCore\\ShopCore.API\\ShopCore.API.csproj",
         "packagesPath": "D:\\Administrator\\.nuget\\packages",
-        "outputPath": "E:\\Teaching\\ShopCore\\shopcore.api\\obj\\",
+        "outputPath": "E:\\Teaching\\ShopCore\\ShopCore.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -356,6 +356,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.13, )"
+            },
+            "Z.EntityFramework.Extensions.EFCore": {
+              "target": "Package",
+              "version": "[5.13.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

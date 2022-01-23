@@ -7,8 +7,9 @@ namespace ShopCore.Repository
     public interface ICartRepository
     {
         int AddCart(Cart cart);
-        void Delete();
         List<CartDto> GetAll(int UserId);
         int UpdateCart(Cart cart);
+        int Delete(int CartId);
+        int Clear(int UserId);
     }
 }

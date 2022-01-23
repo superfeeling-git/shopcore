@@ -11,5 +11,9 @@ namespace ShopCore.Entity
         public int SKUID { get; set; }
         public int GoodsId { get; set; }
         public int TasteId { get; set; }
+        /// <summary>
+        /// 库存
+        /// </summary>
+        public int Stock { get; set; }
     }
 }

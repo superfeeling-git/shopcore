@@ -8,6 +8,8 @@ namespace ShopCore.Dto
 {
     public class CartDto
     {
+        public int CartId { get; set; }
+
         public int SKUID { get; set; }
         public int BuyCount { get; set; }
         public string GoodsName { get; set; }

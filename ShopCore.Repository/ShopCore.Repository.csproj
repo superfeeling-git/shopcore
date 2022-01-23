@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NLog" Version="4.7.13" />
+    <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="5.13.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ShopCore.Dto\ShopCore.Dto.csproj" />
     <ProjectReference Include="..\ShopCore.Entity\ShopCore.Entity.csproj" />
   </ItemGroup>

@@ -19,22 +19,47 @@ namespace ShopCore.API.Controllers
             this.CartService = CartService;
         }
 
+        /// <summary>
+        /// 添加购物车
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddCart(CartDto dto)
         {
             return Ok(CartService.AddCart(dto));
         }
 
+        /// <summary>
+        /// 获取购物车
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult GetCart()
         {
             return new JsonResult(CartService.GetAll());
         }
 
+        /// <summary>
+        /// 更新购物车
+        /// </summary>
+        /// <param name="dto"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult UpdateCar(CartDto dto)
         {
             return Ok(CartService.UpdateCart(dto));
+        }
+
+        /// <summary>
+        /// 删除购物车
+        /// </summary>
+        /// <param name="CartId"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Delete(int CartId)
+        {
+            return Ok(CartService.Delete(CartId));
         }
     }
 }

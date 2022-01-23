@@ -22,6 +22,8 @@ namespace ShopCore.Entity
         public DbSet<SKU> SKU { get; set; }
         public DbSet<Cart> Cart { get; set; }
         public DbSet<ShipAddress> ShipAddresses { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderGoods> OrderGoods { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

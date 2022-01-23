@@ -40,7 +40,10 @@
         <el-card class="box-card">
             <div slot="header" class="clearfix">
                 <span>收货地址选择</span>
-                <el-button style="float: right; padding: 3px 0" type="text" @click="AddAddress"
+                <el-button
+                    style="float: right; padding: 3px 0"
+                    type="text"
+                    @click="AddAddress"
                     >添加</el-button
                 >
             </div>
@@ -57,6 +60,57 @@
         <el-dialog title="收货地址" :visible.sync="dialogTableVisible">
             <ship-address></ship-address>
         </el-dialog>
+        <div>
+            <img src="../assets/ship.jpg" width="1262" style="width: 1262px" />
+        </div>
+        <el-table :data="tableData" style="width: 100%">
+            <el-table-column prop="cartId" label="选择" width="180">
+            </el-table-column>
+            <el-table-column label="商品">
+                <template slot-scope="scope">
+                    <div style="float: left">
+                        <img :src="format(scope.row.goodsImg)" width="60" />
+                    </div>
+                    <div style="float: left; margin-left: 20px">
+                        {{ scope.row.goodsName }}
+                    </div>
+                </template>
+            </el-table-column>
+            <el-table-column prop="price" label="单价"> </el-table-column>
+            <el-table-column prop="price" label="数量">
+                <template slot-scope="scope">
+                    {{ scope.row.buyCount }}
+                </template>
+            </el-table-column>
+            <el-table-column label="小计">
+                <template slot-scope="scope">
+                    {{ scope.row.price * scope.row.buyCount }}
+                </template>
+            </el-table-column>
+            <el-table-column prop="price" label="删除">
+                <template slot-scope="scope">
+                    <el-button type="success" @click="del(scope)"
+                        >删除</el-button
+                    >
+                </template>
+            </el-table-column>
+        </el-table>
+        <div class="priceInfo clearfix">
+            <div class="floatleft">
+                给卖家留言：
+                <el-input
+                    type="textarea"
+                    :rows="2"
+                    placeholder="请输入内容"
+                    v-model="remark"
+                >
+                </el-input>
+            </div>
+            <div class="floatright">应付金额：<span>¥{{total}}</span>元</div>
+        </div>
+        <div class="floatright">
+             <el-button type="danger" @click="createOrder">提交订单</el-button>
+        </div>
     </div>
 </template>
 
@@ -67,7 +121,8 @@ ul li {
     padding: 0;
     height: 40px;
 }
-.order {
+.order,
+.priceInfo {
     width: 1262px;
     margin: 0 auto;
 }
@@ -84,15 +139,58 @@ ul li {
 .my-content {
     background: #fde2e2;
 }
+.priceInfo {
+    background: #efeeee;
+}
+.priceInfo .floatleft {
+    float: left;
+    width: 25%;
+    margin: 16px;
+}
+.el-textarea {
+    margin-top: 12px;
+}
+.priceInfo .floatright,
+.floatright {
+    float: right;
+    margin: 16px 30px 40px 60px;
+    font-size: 2em;
+}
+/*.   #   空格   html元素   >*/
+.priceInfo .floatright span {
+    color: red;
+}
+.clear {
+    height: 0;
+    clear: both;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+/* Hides from IE-mac */
+*html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+/* End hide from IE-mac */
 </style>
 
 
 <script>
-import ShipAddress from './shipAddress.vue'
+import ShipAddress from "./shipAddress.vue";
 
 export default {
-    components:{
-        ShipAddress
+    components: {
+        ShipAddress,
     },
     data() {
         return {
@@ -104,14 +202,51 @@ export default {
                 email: "",
                 address: "",
             },
-            dialogTableVisible:false,
+            remark: "",
+            dialogTableVisible: false,
             addressId: 0,
             ShipAddress: [],
+            tableData: [],
         };
     },
+    computed:{
+        total:function(){
+            let _total = 0;
+
+            this.tableData.forEach(v=>{
+                _total += v.buyCount * v.price;
+            });
+
+            return _total;
+        }
+    },
     methods: {
-        AddAddress(){
+        AddAddress() {
             this.dialogTableVisible = true;
+        },
+        format(path) {
+            return "http://localhost:5000" + path;
+        },
+        del(scope) {
+            this.axios
+                .get(`/api/Cart/Delete?CartId=${scope.row.cartId}`)
+                .then((m) => {
+                    this.getcart();
+                });
+        },
+        getcart() {
+            this.axios.get("/api/Cart/GetCart").then((m) => {
+                this.tableData = m.data;
+            });
+        },
+        createOrder(){
+            this.axios.get(`/api/order/create?AddressId=${this.addressId}&Remark=${this.remark}`).then(m=>{
+                //
+                if(m.data.code == 0){
+                    //弹出消息
+                    //跳转到支付页面
+                }
+            });
         }
     },
     mounted() {
@@ -123,6 +258,8 @@ export default {
         this.axios.get("/api/user/GetAddress").then((m) => {
             this.ShipAddress = m.data;
         });
+
+        this.getcart();
     },
 };
 </script>

@@ -8,5 +8,7 @@ namespace ShopCore.Service
         int AddCart(CartDto dto);
         List<CartDto> GetAll();
         int UpdateCart(CartDto dto);
+        int Delete(int CartId);
+        int Clear();
     }
 }

@@ -117,6 +117,83 @@ namespace ShopCore.Entity.Migrations
                     b.ToTable("GoodsCategories");
                 });
 
+            modelBuilder.Entity("ShopCore.Entity.Order", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrderNum")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderStatue")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("OrderTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("PayType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TEL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TotalPrice")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderID");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("ShopCore.Entity.OrderGoods", b =>
+                {
+                    b.Property<string>("OrderGoodsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("BuyCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GoodsName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SKUID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TasteName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("OrderGoodsId");
+
+                    b.HasIndex("OrderID");
+
+                    b.ToTable("OrderGoods");
+                });
+
             modelBuilder.Entity("ShopCore.Entity.SKU", b =>
                 {
                     b.Property<int>("SKUID")
@@ -125,6 +202,9 @@ namespace ShopCore.Entity.Migrations
                         .UseIdentityColumn();
 
                     b.Property<int>("GoodsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Stock")
                         .HasColumnType("int");
 
                     b.Property<int>("TasteId")
@@ -240,6 +320,28 @@ namespace ShopCore.Entity.Migrations
                         .HasForeignKey("GoodsCategoryCategoryId");
                 });
 
+            modelBuilder.Entity("ShopCore.Entity.Order", b =>
+                {
+                    b.HasOne("ShopCore.Entity.User", "User")
+                        .WithMany("Order")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("ShopCore.Entity.OrderGoods", b =>
+                {
+                    b.HasOne("ShopCore.Entity.Order", "Order")
+                        .WithMany("OrderGoods")
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
             modelBuilder.Entity("ShopCore.Entity.ShipAddress", b =>
                 {
                     b.HasOne("ShopCore.Entity.User", "User")
@@ -257,8 +359,15 @@ namespace ShopCore.Entity.Migrations
                     b.Navigation("Goods");
                 });
 
+            modelBuilder.Entity("ShopCore.Entity.Order", b =>
+                {
+                    b.Navigation("OrderGoods");
+                });
+
             modelBuilder.Entity("ShopCore.Entity.User", b =>
                 {
+                    b.Navigation("Order");
+
                     b.Navigation("shipAddresses");
                 });
 #pragma warning restore 612, 618

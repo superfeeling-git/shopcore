@@ -31,5 +31,23 @@ namespace ShopCore.Repository
         {
             return db.Tastes.AsQueryable();
         }
+
+        public int CreateTastes(Taste taste)
+        {
+            db.Tastes.Add(taste);
+            int count = db.SaveChanges();
+
+            return count;
+        }
+
+        public IQueryable<Taste> QueryTaste()
+        {
+            return db.Tastes.AsQueryable();
+        }
+
+        public IQueryable<SKU> QuerySKU()
+        {
+            return db.SKU.AsQueryable();
+        }
     }
 }

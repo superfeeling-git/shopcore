@@ -104,6 +104,9 @@ namespace ShopCore.API
             services.AddScoped<ICartService, CartService>();
             services.AddScoped<IShipAddressRepository, ShipAddressRepository>();
             services.AddScoped<IShipAddressService, ShipAddressService>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<ISKURepository, SKURepository>();
 
             services.AddSwaggerGen(options =>
             {

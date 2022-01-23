@@ -64,5 +64,19 @@ namespace ShopCore.Service
             var userid = UserService.LoginInfo().UserId;
             return CartRepository.UpdateCart(new Cart { BuyCount = dto.BuyCount, SKUID = dto.SKUID, UserId = userid });
         }
+
+        /// <summary>
+        /// 删除购物车商品
+        /// </summary>
+        public int Delete(int CartId)
+        {
+            return CartRepository.Delete(CartId);
+        }
+
+        public int Clear()
+        {
+            var userid = UserService.LoginInfo().UserId;
+            return CartRepository.Clear(userid);
+        }
     }
 }
